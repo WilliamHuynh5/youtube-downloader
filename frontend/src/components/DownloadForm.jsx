@@ -3,6 +3,7 @@ import FormInput from './FormInput';
 import Button from 'react-bootstrap/Button';
 import {apiCall} from '../fetch_api';
 import Helpers from '../helpers.js';
+import ButtonGeneric from './ButtonGeneric';
 
 const DownloadForm = (props) => {
   const [url, setUrl] = useState('');
@@ -45,15 +46,15 @@ const DownloadForm = (props) => {
     <FormInput onChange={(e) => {
       setUrl(e.target.value);
     }}></FormInput>
-    <Button variant="primary" type="button" onClick={fetch}>
+    <Button variant="outline-primary" onClick={fetch}>
       Fetch!
     </Button>
-    <Button variant="primary" type="button" onClick={downloadMP4}>
+    {/* <Button variant="danger" onClick={downloadMP4}>
       Download MP4!
     </Button>
-    <Button variant="primary" type="button" onClick={downloadMP3}>
+    <Button onClick={downloadMP3}>
       Download MP3!
-    </Button>
+    </Button> */}
   </>
 
   )
