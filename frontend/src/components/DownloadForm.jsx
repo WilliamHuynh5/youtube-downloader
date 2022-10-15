@@ -3,15 +3,18 @@ import FormInput from './FormInput';
 import Button from 'react-bootstrap/Button';
 import {apiCall} from '../fetch_api';
 import Helpers from '../helpers.js';
-import ButtonGeneric from './ButtonGeneric';
+import '../App.css'
+
 
 const DownloadForm = (props) => {
   const [url, setUrl] = useState('');
   
   const fetch = async() => {
+    console.log("fetching")
     const res = await apiCall('fetch/video/details', 'POST', {
       url: url
     })
+    console.log(res)
   }
   
   const downloadMP4 = async() => {
@@ -46,7 +49,7 @@ const DownloadForm = (props) => {
     <FormInput onChange={(e) => {
       setUrl(e.target.value);
     }}></FormInput>
-    <Button variant="outline-primary" onClick={fetch}>
+    <Button className="button" style={{marginTop: '1.3rem' }} onClick={fetch}>
       Fetch!
     </Button>
     {/* <Button variant="danger" onClick={downloadMP4}>

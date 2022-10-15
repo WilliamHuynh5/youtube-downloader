@@ -21,9 +21,9 @@ app.get("/api/download/mp4", async (req, res) => {
   res.download(await downloadMP4(url));
 });
 
-app.post("/api/fetch/video/details", (req, res) => {
+app.post("/api/fetch/video/details", async (req, res) => {
   const url = req.body.url;
-  res.json(fetchVideoData(url));
+  res.json(await fetchVideoData(url));
 })
 
 app.get("/*", (req, res) => {

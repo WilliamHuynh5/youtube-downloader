@@ -1,11 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
+import { primaryButton } from '../inlineStyles';
 
 const ButtonGeneric = () => {
   return (
-    <Button style={{
-      'backgroundColor': 'red'
-    }}>title</Button>
+    <Button style={primaryButton}>asdas</Button>
   )
 }
 

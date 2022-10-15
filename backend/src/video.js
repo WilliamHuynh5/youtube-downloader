@@ -1,12 +1,27 @@
 import ytdl from "ytdl-core";
 import fs from 'fs';
 
-export function fetchVideoData(youtubeUrl) {
-  const id = getIdFromVideo(youtubeUrl);
-  const thumbnail = 'img.youtube.com/vi/' + id + '/hqdefault.jpg';
-  return {
-    thumbnail: thumbnail
-  };
+  // const id = getIdFromVideo(youtubeUrl);
+  // const thumbnail = 'img.youtube.com/vi/' + id + '/hqdefault.jpg';
+  
+  
+export async function fetchVideoData(youtubeUrl) {
+  if (youtubeUrl === "" || youtubeUrl === undefined) return {'error': 'Invalid url'};
+  try {
+    const info = await ytdl.getInfo(youtubeUrl);
+    const details = info.videoDetails;
+    return {
+      title: details.title,
+      thumbnail: details.thumbnails[-1],
+      duration: details.lengthSeconds,
+      views: details.viewCount,
+      uploadDate: details.uploadDate,
+    };
+  } catch {
+    return {
+      error: 'Failed to fetch Video'
+    }
+  }
 }
 
 function getIdFromVideo(youtubeUrl) {
@@ -49,8 +64,4 @@ export function downloadMP3(url) {
   }).then(
     
   )
-}
-
-export function transferFile(url, format) {
-  
 }

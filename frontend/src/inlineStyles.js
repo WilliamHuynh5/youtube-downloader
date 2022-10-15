@@ -38,3 +38,11 @@ export const borderBottomSolid = {
   borderBottomStyle: 'solid',
   borderBottom: 'black',
 };
+
+export const primaryButton = {
+  margin: '1rem auto',
+  minWidth: '50px',
+  backgroundColor: '#2c2c2c',
+  color: '#ffffff !important',
+  transition: 'background-color 160ms linear',
+}

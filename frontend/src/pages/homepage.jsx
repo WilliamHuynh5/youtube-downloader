@@ -12,7 +12,7 @@ const HomePage = () => {
           <img src = {youtube_logo} style={{width: '80rem', marginTop: '1rem'}}></img>
         </div> */}
         <div style={{textAlign: 'center', backgroundColor: '#f5f5f5'}}>
-          <div style={{paddingTop: '20rem'}}>
+          <div style={{paddingTop: '25rem'}}>
             <DownloadForm></DownloadForm>
             <h1 style={{fontFamily: 'inherit', fontWeight: 'lighter', paddingTop: '3rem'}}>Download anything, anytime</h1>
           </div>
