@@ -29,6 +29,7 @@ app.get("/api/download/mp4", async (req, res) => {
 
 app.post("/api/fetch/video/details", async (req, res) => {
   const url = req.body.url;
+  console.log(url);
   res.json(await fetchVideoData(url));
 })
 
