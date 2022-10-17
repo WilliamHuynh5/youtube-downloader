@@ -1,7 +1,8 @@
 # youtube-downloader
 https://youtube-downloader-mp.herokuapp.com/
 
-A webapp for those interested in downloading videos from YouTube. Supports MP4 and MP3 formats using the best available quality.
+A webapp for those interested in downloading videos from YouTube. 
+Supports MP4 and MP3 formats using the best available quality.
 
 # setup locally
 - `npm install` to install dependencies
