@@ -71,7 +71,7 @@ const DownloadForm = (props) => {
   const downloadMP3 = async() => {
     setIsDownloading(true);
     Helpers.httpRequest(
-      `/api/download/mp4?url=${url}`,
+      `/api/download/mp3?url=${url}`,
       'get'
      ).then((response) => response.blob())
      .then((blob) => {
