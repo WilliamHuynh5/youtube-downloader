@@ -4,8 +4,10 @@ import path from 'path';
 
 import { fetchVideoData, downloadMP3, downloadMP4, cleanUp } from './video.js';
 
-const app = express()
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const frontendPath = path.join(__dirname, '..', '..', 'frontend');
+const app = express()
 
 app.use(cors());
 app.use(express.json())
