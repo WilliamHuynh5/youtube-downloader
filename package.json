@@ -1,0 +1,21 @@
+{
+  "name": "youtube-downloader",
+  "version": "1.0.0",
+  "description": "currently a work in progress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./backend/src/server/index.js",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamHuynh5/youtube-downloader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WilliamHuynh5/youtube-downloader/issues"
+  },
+  "homepage": "https://github.com/WilliamHuynh5/youtube-downloader#readme"
+}
