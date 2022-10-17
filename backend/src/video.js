@@ -34,6 +34,9 @@ export async function downloadMP4(url) {
   console.log("ENTERING MP4")
   const info = await ytdl.getBasicInfo(url);
   try {
+    if (!fs. existsSync('./files')){
+      fs. mkdirSync('./files');
+    }
     await new Promise((resolve) => {
       ytdl(url, {
         format: 'mp4',
