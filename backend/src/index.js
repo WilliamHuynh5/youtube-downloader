@@ -5,11 +5,12 @@ import path from 'path';
 import { fetchVideoData, downloadMP3, downloadMP4, cleanUp } from './video.js';
 
 const app = express()
+const frontendPath = path.join(__dirname, '..', '..', 'frontend');
 
 app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
-// app.use(express.static(path.join(frontendPath, "/build")));
+app.use(express.static(path.join(frontendPath, "/build")));
 
 app.get("/api/download/mp3", async (req, res) => {
   const url = req.query.url;
