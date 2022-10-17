@@ -19,7 +19,7 @@ app.use(express.static(path.join(frontendPath, "/build")));
 
 app.get("/api/download/mp3", async (req, res) => {
   const url = req.query.url;
-  res.json(await downloadMP3(url));
+  res.download(await downloadMP3(url));
 });
 
 app.get("/api/download/mp4", async (req, res) => {
