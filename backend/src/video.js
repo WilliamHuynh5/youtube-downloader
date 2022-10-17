@@ -67,7 +67,7 @@ export async function downloadMP3(url) {
     }
     await new Promise((resolve) => {
       ytdl(url, {
-        format: ytdl.chooseFormat(info.formats, { quality: 'highestaudio' })
+        filter: 'audioonly'
       }).pipe(fs.createWriteStream('files/' + getIdFromVideo(url) + '.mp3'))
       .on('close', () => {
         resolve();

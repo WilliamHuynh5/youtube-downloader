@@ -29,12 +29,10 @@ app.get("/api/download/mp4", async (req, res) => {
 
 app.post("/api/fetch/video/details", async (req, res) => {
   const url = req.body.url;
-  console.log(url);
   res.json(await fetchVideoData(url));
 })
 
 app.delete("/api/clean/up", async (req, res) => {
-  console.log("deleting")
   res.json(await cleanUp());
 })
 
