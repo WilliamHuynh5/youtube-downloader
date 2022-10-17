@@ -61,6 +61,9 @@ export async function downloadMP4(url) {
 export async function downloadMP3(url) {
   const info = await ytdl.getBasicInfo(url);
   try {
+    if (!fs. existsSync('./files')){
+      fs. mkdirSync('./files');
+    }
     await new Promise((resolve) => {
       ytdl(url, {
         format: 'mp3'
