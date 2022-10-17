@@ -29,16 +29,17 @@ const DownloadForm = (props) => {
     setIsLoading(true);
     const res = await apiCall('fetch/video/details', 'POST', {
       url: url
+    }).then((res) => {
+      setIsLoading(false);
+      if('error' in res) {
+        setError(true);
+      } else {
+        handleShow();
+        setVideoTitle(res.title);
+        setVideoThumbnail(res.thumbnail)
+      }
     });
-    setIsLoading(false);
-    console.log(res);
-    if('error' in res) {
-      setError(true);
-    } else {
-      handleShow();
-      setVideoTitle(res.title);
-      setVideoThumbnail(res.thumbnail)
-    }
+
   }
   
   
