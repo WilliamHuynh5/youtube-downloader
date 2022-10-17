@@ -31,6 +31,7 @@ const DownloadForm = (props) => {
       url: url
     });
     setIsLoading(false);
+    console.log(res);
     if('error' in res) {
       setError(true);
     } else {
