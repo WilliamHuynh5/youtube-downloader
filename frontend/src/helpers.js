@@ -2,6 +2,7 @@ const Helpers = {
   // Main wrapper for Fetch API
   httpRequest: (url, method, payload, headers) => {
     // Configuration to accept json as a default
+    console.log(url);
     const config = {
       method,
       headers: {
