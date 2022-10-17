@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 
-import { fetchVideoData, downloadMP3, downloadMP4 } from './video.js';
+import { fetchVideoData, downloadMP3, downloadMP4, cleanUp } from './video.js';
 
 const app = express()
 
@@ -24,6 +24,11 @@ app.get("/api/download/mp4", async (req, res) => {
 app.post("/api/fetch/video/details", async (req, res) => {
   const url = req.body.url;
   res.json(await fetchVideoData(url));
+})
+
+app.delete("/api/clean/up", async (req, res) => {
+  console.log("deleting")
+  res.json(await cleanUp());
 })
 
 app.get("/*", (req, res) => {

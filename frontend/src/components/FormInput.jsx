@@ -28,7 +28,8 @@ const FormInput = (props) => {
                 backgroundColor: '#f5f5f5', outline: 'none',
                 borderWidth: '0.2rem', borderColor: '#bdc3c7',
                 fontFamily: 'inherit', fontWeight: 'lighter',
-                transitionDuration: '0.5s'
+                transitionDuration: '0.5s', borderRadius: '0px',
+                boxShadow: 'none', margin: 'auto'
                 }}
       />
     </Form.Group>

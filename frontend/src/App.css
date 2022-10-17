@@ -37,7 +37,7 @@
   }
 }
 
-.button {
+.buttonCust {
   background-color: #424242; /* Green */
   border: none;
   color: white;
@@ -54,7 +54,7 @@
   border-radius: 10px;
 }
 
-.button:hover {
+.buttonCust:hover {
   background-color: #4CAF50; /* Green */
   color: white;
 }

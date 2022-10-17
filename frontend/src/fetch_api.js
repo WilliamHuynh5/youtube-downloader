@@ -12,7 +12,7 @@ export const apiCall = async (path, method, body, token) => {
       'Content-Type': 'application/json',
       'token': token
     },
-    body: method === 'GET' ? undefined : JSON.stringify(body),
+    body: (method === 'GET' || method === 'DELETE') ? undefined : JSON.stringify(body),
   };
   try {
     const response = await fetchWithTimeout(`http://localhost:5000/api/${path}`, init);
