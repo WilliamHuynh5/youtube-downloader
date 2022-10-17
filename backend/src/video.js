@@ -31,7 +31,6 @@ function getIdFromVideo(youtubeUrl) {
 }
 
 export async function downloadMP4(url) {
-  console.log("ENTERING MP4")
   const info = await ytdl.getBasicInfo(url);
   try {
     if (!fs. existsSync('./files')){
@@ -56,7 +55,6 @@ export async function downloadMP4(url) {
   } catch {
     return {error: 'error'}
   }
-  console.log("LEAVING MP4")
 
   return './files/' + getIdFromVideo(url) + '.mp4';
 }
@@ -69,7 +67,8 @@ export async function downloadMP3(url) {
     }
     await new Promise((resolve) => {
       ytdl(url, {
-        format: 'mp3'
+        format: 'mp3',
+        quality: 'highestaudio'
       }).pipe(fs.createWriteStream('files/' + getIdFromVideo(url) + '.mp3'))
       .on('close', () => {
         resolve();
@@ -90,7 +89,6 @@ export async function downloadMP3(url) {
 }
 
 export async function cleanUp() {
-  console.log("ENTERING DELETION")
   const folderPath = "./files";
   try {
     const files = await fsPromises.readdir(folderPath);
@@ -100,6 +98,5 @@ export async function cleanUp() {
 } catch (err){
     console.log(err);
 }
-console.log("LEAVING DELETION")
   return {};
 }
