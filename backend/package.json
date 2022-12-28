@@ -11,7 +11,7 @@
     "ytdl-core": "^4.11.2"
   },
   "scripts": {
-    "start": "node src/index.js",
+    "start": "ts-node-esm src/index.ts",
     "tsc": "tsc --noImplicitAny",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
