@@ -1,4 +1,7 @@
 # youtube-downloader
+
+Note: Website may no longer be accessible as Heroku has removed their free plan.
+
 https://youtube-downloader-mp.herokuapp.com/
 
 A webapp for those interested in downloading videos from YouTube. 
